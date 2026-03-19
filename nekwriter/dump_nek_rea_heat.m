@@ -175,7 +175,7 @@ function dump_rea_2d(fname,X,Hexes,CBC_list,iforder2,Curve,verbose);
    fclose(fid);
    
    if (verbose>1);
-      fprintf('\n   heat:  #Elements=%d  #Curves=%d  #BCs',nelgt,0);
+      fprintf('\n   heat:  #Elements=%d  #BCs',nelgt);
       fprintf(' %d',[nbc0,nbc,nbce]);fprintf('\n'); 
    end
 
@@ -343,7 +343,7 @@ function dump_rea_3d(fname,X,Hexes,CBC_list,iforder2,Curve,verbose);
    end;
 
    if (verbose>1);
-      fprintf('\n   heat:  #Elements=%d  #Curves=%d  #BCs',nelgt,0);
+      fprintf('\n   heat:  #Elements=%d  #BCs',nelgt);
       fprintf(' %d',[nbc0,nbc,nbce]);fprintf('\n');
    end
 

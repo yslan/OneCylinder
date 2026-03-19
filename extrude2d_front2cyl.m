@@ -77,6 +77,7 @@ for f = 1:nface
       
       Qnew(iq0+1:iq0+nelf,:) = [v1, v2, v3, v4];
       if (ilyr == 1); % copy curve, TODO: refactor this
+         Qbc_new(1, iq0+1:iq0+nelf) = -(nbc0 + f);
          for ef = 1:nelf
            ee = eids(ef,f);
            ff = fids(ef,f);
