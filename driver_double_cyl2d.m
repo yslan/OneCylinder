@@ -52,7 +52,7 @@ tag = 'cir1'; Nlap = 0;
 [X, Quad, Qbc, Qcurve, Qfront] = extrude2d_front2cyl(X, Quad, Qbc, Qcurve, Qfront, R1, nlayers1, ratio1, Nlap);
 bc_set = chk_bcid([],Qbc,tag,1);
 ifig = 2; h=plot_quad(ifig,X,Quad); apply_xylim(); save_aux(h,tag);
-nQ1 = size(Quad,1);
+nQ1 = size(Quad,1); % for fixing curves
 
 % to bdry
 tag = 'cir2'; Nlap = 0; 
@@ -96,7 +96,7 @@ CBCt = set_cbc(Qbc,bc_map)';
 
 % reconstruct cyl curves for face 1 and 3
 nQ = size(Quad,1);
-iq = (nel1+1):nQ;
+iq = (nQ1+1):nQ;
 Qcurve_tmp = fix_cyl_curve(X,Quad(iq,:),Qcurve(:,:,iq));
 Qcurve(:,:,iq) = Qcurve_tmp;
 
